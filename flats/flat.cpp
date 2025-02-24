@@ -52,3 +52,6 @@ void FLAT::print(){
     cout<<number<<' '<<address.get_string()<<' '<<square<<' '<<floor<<' '<<side<<' ';
     cout<<data_sale.get_string()<<' '<<price<<' '<<sale<<' '<<price_with_sale<<endl;
 }
+void FLAT::printShortInfo(){
+    cout<<number<<' '<<address.get_string()<<' '<<square<<endl;
+}

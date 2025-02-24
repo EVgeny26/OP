@@ -7,9 +7,11 @@
 
 #endif
 
-
-
 using namespace std;
+
+
+
+
 
 int main(){
     unsigned int number{};
@@ -22,7 +24,7 @@ int main(){
     SALE sale{};
 
     FLAT flats{number, address, square, floor, side, data_sale, price, sale};
-    flats.print();
+    
 
     return 0;
 }

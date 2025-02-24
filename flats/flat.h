@@ -34,7 +34,7 @@ public:
     int getSale();
     unsigned int getPriceWithSale();
     void print();
-    
+    void printShortInfo();
 
 
 };
