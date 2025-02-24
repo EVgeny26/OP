@@ -8,38 +8,47 @@ FLAT::~FLAT(){}
 
 
 void FLAT::setPrice(unsigned int newPrice){
+    price=newPrice;
+    price_with_sale=(price*(100-sale)/100);
 
 }
 void FLAT::setSale(SALE sale){
-
+    this->sale=sale;
+    price_with_sale=(price*(100-sale)/100);
 }
 
 
 
-void FLAT::getNumder(){
-
+unsigned int FLAT::getNumder(){
+    return number;
 }
-void FLAT::getAddress(){
-
+string FLAT::getAddress(){
+    return address.get_string();
 }
-void FLAT::getSquare(){
-
+unsigned int FLAT::getSquare(){
+    return square;
 }
-void FLAT::getFloor(){
-
+unsigned int FLAT::getFloor(){
+    return floor;
 }
-void FLAT::getSide(){
-
+int FLAT::getSide(){
+    return side;
 }
-void FLAT::getDataSale(){
-
+string FLAT::getDataSale(){
+    return data_sale.get_string();
 }
-void FLAT::getPrice(){
-
+unsigned int FLAT::getPrice(){
+    return price;
 }
-void FLAT::getSale(){
-
+int FLAT::getSale(){
+    return sale;
 }
-void FLAT::getPriceWithSale(){
+unsigned int FLAT::getPriceWithSale(){
+    return price_with_sale;
+}
 
+
+void FLAT::print(){
+    cout<<number<<' '<<address.get_string()<<' '<<square<<' '<<floor<<' '<<side<<' ';
+    cout<<data_sale.get_string()<<' '<<price<<' '<<sale<<' '<<price_with_sale<<endl;
 }
