@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include "flats/flat.h"
+#include "flats/flats.h"
+
 
 #endif
 
 using namespace std;
 
 
-
+ 
 
 
 int main(){
@@ -23,8 +24,6 @@ int main(){
     unsigned int price{};
     SALE sale{};
 
-    FLAT flats{number, address, square, floor, side, data_sale, price, sale};
-    
 
     return 0;
 }
