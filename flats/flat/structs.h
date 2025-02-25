@@ -14,6 +14,8 @@ struct ADDRESS
 
     void print();
     string get_string();
+    bool operator==(const ADDRESS& other) const;
+    bool operator!=(const ADDRESS& other) const;
 };
 
 struct DATA
@@ -24,6 +26,8 @@ struct DATA
 
     void print();
     string get_string();
+    bool operator==(const DATA& other) const;
+    bool operator!=(const DATA& other) const;
 };
 
 
