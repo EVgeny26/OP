@@ -15,8 +15,23 @@ public:
     unsigned int getLenght();
     void addFlat(FLAT newFlat);
     void printAll();
-    FLAT getFlatNum(int pos);
+    FLAT* getFlatNum(int pos);
     void delFlatNum(int pos);
 
+    //реализовать
+    //работа с файлами
+    void loudToFile(/*string filename ?*/);
+    void loudFromFile(/*string filename ?*/);
+
+
+    //запросы
+    void getFlatsForData(DATA data);
+    void getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
+    void getFlatsForFirstHalfYear(unsigned short year);
+    void getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
+
+    void getFlatsWithSale();
+    void getFlatsWithSaleOnFloor(unsigned short floor);
+    float getPersentSaleFromFlatForMonth(unsigned short month, unsigned short year);
 
 };

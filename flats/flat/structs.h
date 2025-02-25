@@ -28,7 +28,8 @@ struct DATA
 
 
 enum SIDE{
-    YARD, STREET, FOREST, SEA, RIVER, LAKE, 
+    YARD, STREET, 
+    //FOREST, SEA, RIVER, LAKE, 
 };
 enum SALE{
     NOT=0, FOR_WORKERS=30, 

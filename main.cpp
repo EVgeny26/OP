@@ -24,6 +24,35 @@ int main(){
     unsigned int price{};
     SALE sale{};
 
+    LIST_FLAT *flats = new LIST_FLAT{};
+
+    cout<<flats->getLenght();
+    flats->delFlatNum(0);
+    flats->addFlat(FLAT{number, address, square, floor, side, data_sale, price, sale});
+    cout<<flats->getLenght()<<endl;
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
+    cout<<flats->getLenght()<<" len prelast"<<endl;
+    flats->printAll();
+    cout<<endl;
+
+    flats->delFlatNum(0);
+    flats->delFlatNum(0);
+    flats->printAll();
+    cout<<endl;
+
+    flats->delFlatNum(3);
+    flats->printAll();
+    cout<<endl;
+
+    flats->getFlatNum(0)->print();
+
+
+    delete flats;
+
+
 
     return 0;
 }

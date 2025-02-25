@@ -35,25 +35,28 @@ void LIST_FLAT::printAll(){
     }
 }
 
-FLAT LIST_FLAT::getFlatNum(int pos){
-    if(lenght<pos){
+FLAT* LIST_FLAT::getFlatNum(int pos){      //????????????????????????????
+    if(lenght<=pos){
         cout<<"Out of range\n";
-        return;
+        return nullptr;
     }ELEM *current_flat=head;
     for(int i=0;i<pos;i++)current_flat=current_flat->next_el;
-    return current_flat->flat;
+    return &current_flat->flat;
 }
 
 void LIST_FLAT::delFlatNum(int pos){
-    if(lenght<pos){
+    if(lenght<=pos){
         cout<<"Out of range\n";
         return;
-    }else{
-        ELEM *current_flat=head;
-        for(int i=0;i<pos-1;i++)current_flat=current_flat->next_el;
-        ELEM *next_flat=current_flat->next_el->next_el;
-        delete current_flat->next_el;
-        current_flat=next_flat;
-        lenght--;
     }
+    ELEM *current_flat=head;
+    ELEM* previos = nullptr;
+    for(int i=0;i<pos;i++){
+        previos=current_flat;
+        current_flat=current_flat->next_el;
+    }
+    if(previos==nullptr) head=current_flat->next_el;
+    else previos->next_el=current_flat->next_el;
+    delete current_flat;
+    lenght--;
 }
