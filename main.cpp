@@ -11,9 +11,6 @@
 using namespace std;
 
 
- 
-
-
 int main(){
     unsigned int number{};
     ADDRESS address{};
@@ -23,6 +20,8 @@ int main(){
     DATA data_sale{};
     unsigned int price{};
     SALE sale{};
+
+
 
     LIST_FLAT *flats = new LIST_FLAT{};
 
@@ -47,7 +46,7 @@ int main(){
     flats->printAll();
     cout<<endl;
 
-    flats->getFlatNum(0)->print();
+    // flats->getFlatNum(0)->print();
 
 
     delete flats;

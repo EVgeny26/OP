@@ -1,7 +1,9 @@
 #include "structs.h"
 
-void DATA::print(){
-    cout<<day<<'.'<<month<<'.'<<year;
+
+ostream& operator<<(ostream& os, const DATA data){
+    os<<data.day<<'.'<<data.month<<'.'<<data.year;
+    return os;
 }
 string DATA::get_string(){
     string data{to_string(day)+'.'+to_string(month)+'.'+to_string(year)};
@@ -14,9 +16,12 @@ bool DATA::operator==(const DATA& other) const {
     return !(*this == other);
 }
 
-void ADDRESS::print(){
-    cout<<region<<", "<<city<<", ул. "<<street<<" №"<<num_street;
-    if(num_flat)cout<<" кв. "<<num_flat;
+
+
+ostream& operator<<(ostream& os, const ADDRESS address){
+    os<<address.region<<", "<<address.city<<", ул. "<<address.street<<" №"<<address.num_street;
+    if(address.num_flat)os<<" кв. "<<address.num_flat;
+    return os;
 }
 string ADDRESS::get_string(){
     string address{region+", "+city+", ул. "+street+" №"+to_string(num_street)};

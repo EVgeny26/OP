@@ -1,6 +1,11 @@
+#ifndef FLAT_H
+#define FLAT_H
+
 #include <iostream>
 #include <string>
 #include "structs.h"
+
+#endif
 
 using namespace std;
 
@@ -33,7 +38,7 @@ public:
     unsigned int getPrice();
     int getSale();
     unsigned int getPriceWithSale();
-    void print();
+    friend ostream& operator<<(ostream& os, const FLAT& s);
     void printShortInfo();
 
 

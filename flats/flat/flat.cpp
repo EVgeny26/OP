@@ -48,9 +48,10 @@ unsigned int FLAT::getPriceWithSale(){
 }
 
 
-void FLAT::print(){
-    cout<<number<<' '<<address.get_string()<<' '<<square<<' '<<floor<<' '<<side<<' ';
-    cout<<data_sale.get_string()<<' '<<price<<' '<<sale<<' '<<price_with_sale<<endl;
+ostream& operator<<(ostream& os, const FLAT& obj){
+    os<<obj.number<<' '<<obj.address<<' '<<obj.square<<' '<<obj.floor<<' '<<obj.side<<' ';
+    os<<obj.data_sale<<' '<<obj.price<<' '<<obj.sale<<' '<<obj.price_with_sale<<endl;
+    return os;
 }
 void FLAT::printShortInfo(){
     cout<<number<<' '<<address.get_string()<<' '<<square<<endl;

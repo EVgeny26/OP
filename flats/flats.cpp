@@ -30,7 +30,7 @@ void LIST_FLAT::addFlat(FLAT newFlat){
 void LIST_FLAT::printAll(){
     ELEM *current_flat=head;
     while(current_flat!=nullptr){
-        current_flat->flat.print();
+        cout<<current_flat->flat;
         current_flat=current_flat->next_el;
     }
 }
