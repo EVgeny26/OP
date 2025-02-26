@@ -5,7 +5,7 @@
 #include <string>
 #include "flats/flats.h"
 
-//Test git push ++++
+//Test git push ++++skdjglkdsjhflkjshdflkhsdkjhflksjdhflkahdsflkjhl
 
 #endif
 
@@ -21,8 +21,6 @@ int main(){
     DATA data_sale{};
     unsigned int price{};
     SALE sale{};
-
-
 
     LIST_FLAT *flats = new LIST_FLAT{};
 
