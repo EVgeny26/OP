@@ -20,8 +20,8 @@ public:
 
     //реализовать
     //работа с файлами
-    void loudToFile(/*string filename ?*/);
-    void loudFromFile(/*string filename ?*/);
+    void loudToFile();
+    void loudFromFile();
 
 
     //запросы

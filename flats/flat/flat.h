@@ -10,7 +10,7 @@
 using namespace std;
 
 class FLAT{
-private:
+protected:
     unsigned int number;//?
     ADDRESS address;//const
     unsigned short square;//?
