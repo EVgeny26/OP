@@ -53,6 +53,7 @@ ostream& operator<<(ostream& os, const FLAT& obj){
     os<<obj.data_sale<<' '<<obj.price<<' '<<obj.sale<<' '<<obj.price_with_sale<<endl;
     return os;
 }
+
 void FLAT::printShortInfo(){
     cout<<number<<' '<<address.get_string()<<' '<<square<<endl;
 }

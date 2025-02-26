@@ -22,8 +22,6 @@ int main(){
     unsigned int price{};
     SALE sale{};
 
-
-
     LIST_FLAT *flats = new LIST_FLAT{};
 
     cout<<flats->getLenght();
