@@ -1,20 +1,21 @@
 #include "structs.h"
 
 
-ostream& operator<<(ostream& os, const DATA data){
-    os<<data.day<<'.'<<data.month<<'.'<<data.year;
+ostream& operator<<(ostream& os, const DATE date){
+    os<<date.day<<'.'<<date.month<<'.'<<date.year;
     return os;
 }
-string DATA::get_string(){
-    string data{to_string(day)+'.'+to_string(month)+'.'+to_string(year)};
-    return data;
+string DATE::get_string(){
+    string date{to_string(day)+'.'+to_string(month)+'.'+to_string(year)};
+    return date;
 }
 
-bool DATA::operator==(const DATA& other) const {
+bool DATE::operator==(const DATE& other) const {
     return (year == other.year && month == other.month && day == other.day);
-}bool DATA::operator!=(const DATA& other) const {
+}bool DATE::operator!=(const DATE& other) const {
     return !(*this == other);
 }
+
 
 
 

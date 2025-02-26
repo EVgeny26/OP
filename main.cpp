@@ -18,34 +18,23 @@ int main(){
     unsigned short square{};
     unsigned short floor{};
     SIDE side{};
-    DATA data_sale{};
+    DATE date_sale{};
     unsigned int price{};
     SALE sale{};
 
     LIST_FLAT *flats = new LIST_FLAT{};
 
-    // cout<<flats->getLenght();
-    // flats->delFlatNum(0);
-    // flats->addFlat(FLAT{number, address, square, floor, side, data_sale, price, sale});
-    // cout<<flats->getLenght()<<endl;
-    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
-    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
-    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
-    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, data_sale, ++price, sale});
-    // cout<<flats->getLenght()<<" len prelast"<<endl;
-    // flats->printAll();
-    // cout<<endl;
+    flats->addFlat(FLAT{number, address, square, floor, side, date_sale, price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, ++price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, ++price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, ++price, sale});
+    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, ++price, sale});
+    cout<<flats->getLenght()<<" len prelast"<<endl;
 
-    // flats->delFlatNum(0);
-    // flats->delFlatNum(0);
-    // flats->printAll();
-    // cout<<endl;
 
     flats->printAll();
     cout<<endl;
-
-    cout<<flats->getFlatNum(1);
-    cout<<(*flats)[0];
+    for(int i=0;i<flats->getLenght(); i++) cout<<(*flats)[i];
 
 
     delete flats;

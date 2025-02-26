@@ -1,7 +1,7 @@
 #include "flat.h"
 
-FLAT::FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATA data_sale, unsigned int price, SALE sale):
-    number(number), address(address), square(square), floor(floor), side(side), data_sale(data_sale), price(price), sale(sale), price_with_sale(price*(100-sale)/100) {}
+FLAT::FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale):
+    number(number), address(address), square(square), floor(floor), side(side), date_sale(date_sale), price(price), sale(sale), price_with_sale(price*(100-sale)/100) {}
 
 FLAT::~FLAT(){}
 
@@ -35,7 +35,7 @@ int FLAT::getSide(){
     return side;
 }
 string FLAT::getDataSale(){
-    return data_sale.get_string();
+    return date_sale.get_string();
 }
 unsigned int FLAT::getPrice(){
     return price;
@@ -50,7 +50,7 @@ unsigned int FLAT::getPriceWithSale(){
 
 ostream& operator<<(ostream& os, const FLAT& obj){
     os<<obj.number<<' '<<obj.address<<' '<<obj.square<<' '<<obj.floor<<' '<<obj.side<<' ';
-    os<<obj.data_sale<<' '<<obj.price<<' '<<obj.sale<<' '<<obj.price_with_sale<<endl;
+    os<<obj.date_sale<<' '<<obj.price<<' '<<obj.sale<<' '<<obj.price_with_sale<<endl;
     return os;
 }
 

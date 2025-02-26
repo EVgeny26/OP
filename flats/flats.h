@@ -15,8 +15,8 @@ public:
     unsigned int getLenght();
     void addFlat(FLAT newFlat);
     void printAll();
-    FLAT* getFlatNum(int pos);
-    FLAT* operator[](int pos);
+    //FLAT& getFlatNum(int pos);
+    FLAT& operator[](int pos);
     void delFlatNum(int pos);
 
     //реализовать
@@ -26,7 +26,7 @@ public:
 
 
     //запросы
-    void getFlatsForData(DATA data); //you can DATA==DATA
+    void getFlatsForData(DATE date); //you can DATE==DATE
     void getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
     void getFlatsForFirstHalfYear(unsigned short year);
     void getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);

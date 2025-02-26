@@ -37,20 +37,20 @@ void LIST_FLAT::printAll(){
     }
 }
 
-FLAT* LIST_FLAT::getFlatNum(int pos){
-    if(lenght<=pos){
-        throw std::out_of_range("Индекс за пределами диапазона");
-    }ELEM *current_flat=head;
-    for(int i=0;i<pos;i++)current_flat=current_flat->next_el;
-    return &current_flat->flat;
-}
+// FLAT& LIST_FLAT::getFlatNum(int pos){
+//     if(lenght<=pos){
+//         throw std::out_of_range("Индекс за пределами диапазона");
+//     }ELEM *current_flat=head;
+//     for(int i=0;i<pos;i++)current_flat=current_flat->next_el;
+//     return current_flat->flat;
+// }
 
-FLAT* LIST_FLAT::operator[](int pos){
+FLAT& LIST_FLAT::operator[](int pos){
     if(lenght<=pos){
         throw std::out_of_range("Индекс за пределами диапазона");
     }ELEM *current_flat=head;
     for(int i=0;i<pos;i++)current_flat=current_flat->next_el;
-    return &current_flat->flat;
+    return current_flat->flat;
 }
 
 
@@ -58,8 +58,7 @@ FLAT* LIST_FLAT::operator[](int pos){
 
 void LIST_FLAT::delFlatNum(int pos){
     if(lenght<=pos){
-        cout<<"Out of range\n";
-        return;
+        throw std::out_of_range("Индекс за пределами диапазона");
     }
     ELEM *current_flat=head;
     ELEM* previos = nullptr;

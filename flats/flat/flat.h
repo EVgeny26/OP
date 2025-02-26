@@ -16,14 +16,14 @@ protected:
     unsigned short square;//?
     unsigned short floor;//const
     SIDE side;//?
-    DATA data_sale;//const
+    DATE date_sale;//const
     unsigned int price;//change
 
     SALE sale;//change
     unsigned int price_with_sale;
 
 public:
-    FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATA data_sale, unsigned int price, SALE sale);
+    FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale);
     ~FLAT();
 
     void setPrice(unsigned int newPrice);

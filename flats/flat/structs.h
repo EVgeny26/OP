@@ -8,7 +8,7 @@
 
 using namespace std;
 
-struct DATA
+struct DATE
 {
     unsigned short year{2000};
     unsigned short month{1};
@@ -16,10 +16,11 @@ struct DATA
 
 
     string get_string();
-    bool operator==(const DATA& other) const;
-    bool operator!=(const DATA& other) const;
+    bool operator==(const DATE& other) const;
+    bool operator!=(const DATE& other) const;
+    //DATE operator+(unsigned short days) const;
 };
-ostream& operator<<(ostream& os, const DATA data);
+ostream& operator<<(ostream& os, const DATE date);
 
 
 struct ADDRESS
