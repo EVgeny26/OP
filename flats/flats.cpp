@@ -1,4 +1,6 @@
 #include "flats.h"
+#include <stdexcept>
+
 
 LIST_FLAT::LIST_FLAT(): head(nullptr), lenght(0) {}
 
@@ -35,14 +37,24 @@ void LIST_FLAT::printAll(){
     }
 }
 
-FLAT* LIST_FLAT::getFlatNum(int pos){      //????????????????????????????
+FLAT* LIST_FLAT::getFlatNum(int pos){
     if(lenght<=pos){
-        cout<<"Out of range\n";
-        return nullptr;
+        throw std::out_of_range("Индекс за пределами диапазона");
     }ELEM *current_flat=head;
     for(int i=0;i<pos;i++)current_flat=current_flat->next_el;
     return &current_flat->flat;
 }
+
+FLAT* LIST_FLAT::operator[](int pos){
+    if(lenght<=pos){
+        throw std::out_of_range("Индекс за пределами диапазона");
+    }ELEM *current_flat=head;
+    for(int i=0;i<pos;i++)current_flat=current_flat->next_el;
+    return &current_flat->flat;
+}
+
+
+
 
 void LIST_FLAT::delFlatNum(int pos){
     if(lenght<=pos){

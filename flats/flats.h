@@ -16,6 +16,7 @@ public:
     void addFlat(FLAT newFlat);
     void printAll();
     FLAT* getFlatNum(int pos);
+    FLAT* operator[](int pos);
     void delFlatNum(int pos);
 
     //реализовать
