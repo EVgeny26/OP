@@ -35,6 +35,7 @@ public:
     unsigned int getFloor();
     int getSide();
     string getDataSale();
+    DATE getDate();
     unsigned int getPrice();
     int getSale();
     unsigned int getPriceWithSale();

@@ -27,12 +27,12 @@ public:
 
     //запросы
     void getFlatsForData(DATE date); //you can DATE==DATE
-    void getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
+    void getFlatsForMonthAndSide(unsigned short month, unsigned short year);
     void getFlatsForFirstHalfYear(unsigned short year);
-    void getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
+    short getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
 
     void getFlatsWithSale();
     void getFlatsWithSaleOnFloor(unsigned short floor);
-    float getPersentSaleFromFlatForMonth(unsigned short month, unsigned short year);
+    short getPersentSaleFromFlatForMonth(unsigned short month, unsigned short year);
 
 };
