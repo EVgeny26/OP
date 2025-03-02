@@ -23,6 +23,7 @@ int main(){
     SALE sale{};
 
     LIST_FLAT *flats = new LIST_FLAT{};
+    // flats->loadFromFile();
 
     flats->addFlat(FLAT{number, address, square, floor, side, date_sale, price, sale});
     flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, ++price, sale});
@@ -49,6 +50,9 @@ int main(){
     flats->getFlatsWithSaleOnFloor(3);
     cout << "getPersentSaleFromFlatForMonth\n";
     cout << flats->getPersentSaleFromFlatForMonth(date_sale.month, date_sale.year) << endl;
+    
+    flats->saveToFile();
+
     delete flats;
 
     return 0;

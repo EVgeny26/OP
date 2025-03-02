@@ -1,5 +1,6 @@
 #include "flats.h"
 #include <stdexcept>
+#include <fstream>
 
 
 LIST_FLAT::LIST_FLAT(): head(nullptr), lenght(0) {}
@@ -188,3 +189,43 @@ short LIST_FLAT::getPersentSaleFromFlatForMonth(unsigned short month, unsigned s
     short percent = (sumDiscount * (1.0) / sumSale) * 100;
     return percent;
 }
+
+
+
+void LIST_FLAT::saveToFile(){
+    string fileName = "file.bin";
+    ofstream file(fileName, ios::out | ios::binary);
+    if(!file){
+        cerr << "Ошибка! Файл не существует!\n";
+        return;
+    }
+    ELEM *current_flat=head;
+    ELEM* previos = nullptr;
+    FLAT flat = current_flat->flat;
+    for(int i = 0; i < lenght; i++){
+        flat = current_flat->flat;
+        // cout << flat.getNumder() << endl;
+        // file<<flat.getNumder()<<' '<<flat.getAddress()<<' '<<flat.getSquare()<<' '<<flat.getFloor()<<' '<<flat.getSide()<<' '<<flat.getDataSale()<<' '<<flat.getPrice()<<' '<<flat.getSale()<<' '<<flat.getPriceWithSale()<<endl;
+        file.write((char *) &flat, sizeof(FLAT));
+        previos=current_flat;
+        current_flat=current_flat->next_el;
+    }
+    file.close();
+}
+
+
+// void LIST_FLAT::loadFromFile(){
+//     string fileName = "file.bin";
+//     ifstream file(fileName, ios::in | ios::binary);
+//     FLAT flat = FLAT();
+//     if(!file){
+//         cerr << "Ошибка! Файл не существует!\n";
+//         return;
+//     }
+//     while(file.read((char *)&flat, sizeof(FLAT))){
+//         cout << sizeof(FLAT) << endl;
+//         addFlat(flat);
+//         cout << lenght << endl;
+//     }
+//     file.close();
+// }

@@ -23,6 +23,7 @@ protected:
     unsigned int price_with_sale;
 
 public:
+    FLAT();
     FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale);
     ~FLAT();
 

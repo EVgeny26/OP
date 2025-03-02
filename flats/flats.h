@@ -21,8 +21,8 @@ public:
 
     //реализовать
     //работа с файлами
-    void loudToFile();
-    void loudFromFile();
+    void loadFromFile();
+    void saveToFile();
 
 
     //запросы

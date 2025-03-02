@@ -1,5 +1,8 @@
 #include "flat.h"
 
+
+FLAT::FLAT(){}
+
 FLAT::FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale):
     number(number), address(address), square(square), floor(floor), side(side), date_sale(date_sale), price(price), sale(sale), price_with_sale(price*(100-sale)/100) {}
 
