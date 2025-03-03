@@ -43,7 +43,11 @@ int FLAT::getSide(){
 string FLAT::getDataSaleStr(){
     return date_sale.get_string();
 }
+<<<<<<< HEAD
 DATE FLAT::getDateSale(){
+=======
+DATE FLAT::getDate(){
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
     return date_sale;
 }
 unsigned int FLAT::getPrice(){

@@ -112,7 +112,11 @@ void LIST_FLAT::getFlatsForData(DATE date){
     ELEM *current_flat=head;
     ELEM* previos = nullptr;
     for(int i = 0; i < lenght; i++){
+<<<<<<< HEAD
         if(current_flat->flat.getDataSaleStr() == date.get_string()) cout << current_flat->flat;
+=======
+        if(current_flat->flat.getDataSale() == date.get_string()) cout << current_flat->flat;
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
         previos=current_flat;
         current_flat=current_flat->next_el;
     }
@@ -122,11 +126,19 @@ void LIST_FLAT::getFlatsForMonthAndSide(unsigned short month, unsigned short yea
     ELEM *current_flat=head;
     ELEM* previos = nullptr;
     FLAT flat = current_flat->flat;
+<<<<<<< HEAD
     DATE date = flat.getDateSale();
     SIDE side = SIDE(YARD);
     for(int i = 0; i < lenght; i++){
         flat = current_flat->flat;
         date = flat.getDateSale();
+=======
+    DATE date = flat.getDate();
+    SIDE side = SIDE(YARD);
+    for(int i = 0; i < lenght; i++){
+        flat = current_flat->flat;
+        date = flat.getDate();
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
         if(date.month == month && date.year == year && flat.getSide() == side) cout << flat;
         previos=current_flat;
         current_flat=current_flat->next_el;
@@ -137,10 +149,17 @@ void LIST_FLAT::getFlatsForFirstHalfYear(unsigned short year){
     ELEM *current_flat=head;
     ELEM* previos = nullptr;
     FLAT flat = current_flat->flat;
+<<<<<<< HEAD
     DATE date = flat.getDateSale();
     for(int i = 0; i < lenght; i++){
         flat = current_flat->flat;
         date = flat.getDateSale();
+=======
+    DATE date = flat.getDate();
+    for(int i = 0; i < lenght; i++){
+        flat = current_flat->flat;
+        date = flat.getDate();
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
         if(date.month > 0 && date.month < 7 && date.year == year) cout << flat;
         previos=current_flat;
         current_flat=current_flat->next_el;
@@ -151,11 +170,19 @@ short LIST_FLAT::getFlatsForMonthAndPrice(unsigned short month, unsigned short y
     ELEM *current_flat=head;
     ELEM* previos = nullptr;
     FLAT flat = current_flat->flat;
+<<<<<<< HEAD
     DATE date = flat.getDateSale();
     int count = 0;
     for(int i = 0; i < lenght; i++){
         flat = current_flat->flat;
         date = flat.getDateSale();
+=======
+    DATE date = flat.getDate();
+    int count = 0;
+    for(int i = 0; i < lenght; i++){
+        flat = current_flat->flat;
+        date = flat.getDate();
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
         if(date.month == month && date.year == year){
             if(sign == '=' && flat.getPrice() == price){
                 count++;
@@ -206,13 +233,21 @@ short LIST_FLAT::getPersentSaleFromFlatForMonth(unsigned short month, unsigned s
     ELEM *current_flat=head;
     ELEM* previos = nullptr;
     FLAT flat = current_flat->flat;
+<<<<<<< HEAD
     DATE date = flat.getDateSale();
+=======
+    DATE date = flat.getDate();
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
     SALE sale = SALE(FOR_WORKERS);
     int sumSale = 0;
     int sumDiscount = 0;
     for(int i = 0; i < lenght; i++){
         flat = current_flat->flat;
+<<<<<<< HEAD
         date = flat.getDateSale();
+=======
+        date = flat.getDate();
+>>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
         sumSale += flat.getPrice();
         if(date.month == month && date.year == year && flat.getSale() == sale){
             sumDiscount += (flat.getPrice() -  flat.getPriceWithSale());
