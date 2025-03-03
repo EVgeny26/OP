@@ -23,13 +23,13 @@ int main(){
     SALE sale{};
 
     LIST_FLAT *flats = new LIST_FLAT{};
-    // flats->loadFromFile();
+    flats->loadFromFile();
 
-    flats->addFlat(FLAT{number, address, square, floor, side, date_sale, price, sale});
-    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 9, sale});
-    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 5, sale});
-    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 3, SALE(FOR_WORKERS)});
-    flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 8, sale});
+    // flats->addFlat(FLAT{number, address, square, floor, side, date_sale, price, sale});
+    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 9, sale});
+    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 5, sale});
+    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 3, SALE(FOR_WORKERS)});
+    // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 8, sale});
 
     cout<<flats->getLenght()<<" len prelast"<<endl;
 

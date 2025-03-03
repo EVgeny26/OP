@@ -29,9 +29,9 @@ ostream& operator<<(ostream& os, const DATE date);
 
 struct ADDRESS
 {
-    string region{};
-    string city{};
-    string street{};
+    string region = " ";
+    string city = " ";
+    string street = " ";
     unsigned short num_street{};
     unsigned short num_flat{};
 

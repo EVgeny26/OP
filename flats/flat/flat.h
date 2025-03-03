@@ -36,8 +36,8 @@ public:
     unsigned int getSquare();
     unsigned int getFloor();
     int getSide();
-    string getDataSaleStr();
-    DATE getDataSale();
+    string getDateSaleStr();
+    DATE getDateSale();
     unsigned int getPrice();
     int getSale();
     unsigned int getPriceWithSale();

@@ -50,13 +50,11 @@ bool DATE::operator<=(const DATE& other) const {
 
 
 ostream& operator<<(ostream& os, const ADDRESS address){
-    os<<address.region<<", "<<address.city<<", ул. "<<address.street<<" №"<<address.num_street;
-    if(address.num_flat)os<<" кв. "<<address.num_flat;
+    os<<address.region<<", "<<address.city<<", ул. "<<address.street<<" №"<<address.num_street<<" кв. "<<address.num_flat;
     return os;
 }
 string ADDRESS::get_string(){
-    string address{region+", "+city+", ул. "+street+" №"+to_string(num_street)};
-    if(num_flat)address+=" кв. "+to_string(num_flat);
+    string address{region+"-"+city+"-"+street+"-"+to_string(num_street)+"-"+to_string(num_flat)};
     return address;
 }
 
