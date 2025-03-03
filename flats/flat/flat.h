@@ -36,13 +36,8 @@ public:
     unsigned int getSquare();
     unsigned int getFloor();
     int getSide();
-<<<<<<< HEAD
     string getDataSaleStr();
-    DATE getDateSale();
-=======
-    string getDataSale();
-    DATE getDate();
->>>>>>> a422b3aeb7fea2ac8d27b42a3e21bf01057f812f
+    DATE getDataSale();
     unsigned int getPrice();
     int getSale();
     unsigned int getPriceWithSale();
