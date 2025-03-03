@@ -40,10 +40,10 @@ unsigned int FLAT::getFloor(){
 int FLAT::getSide(){
     return side;
 }
-string FLAT::getDataSaleStr(){
+string FLAT::getDateSaleStr(){
     return date_sale.get_string();
 }
-DATE FLAT::getDataSale(){
+DATE FLAT::getDateSale(){
     return date_sale;
 }
 unsigned int FLAT::getPrice(){
