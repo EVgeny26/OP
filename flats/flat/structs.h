@@ -18,7 +18,11 @@ struct DATE
     string get_string();
     bool operator==(const DATE& other) const;
     bool operator!=(const DATE& other) const;
-    DATE operator+(unsigned short days) const;
+    bool operator<(const DATE& other) const;
+    bool operator>(const DATE& other) const;
+    bool operator<=(const DATE& other) const;
+    bool operator>=(const DATE& other) const;
+    //DATE operator+(unsigned short days) const;
 };
 ostream& operator<<(ostream& os, const DATE date);
 
@@ -34,6 +38,10 @@ struct ADDRESS
     string get_string();
     bool operator==(const ADDRESS& other) const;
     bool operator!=(const ADDRESS& other) const;
+    bool operator<(const ADDRESS& other) const;
+    bool operator>(const ADDRESS& other) const;
+    bool operator<=(const ADDRESS& other) const;
+    bool operator>=(const ADDRESS& other) const;
 };
 ostream& operator<<(ostream& os, const ADDRESS address);
 

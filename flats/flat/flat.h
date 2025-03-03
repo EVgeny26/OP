@@ -11,18 +11,19 @@ using namespace std;
 
 class FLAT{
 protected:
-    unsigned int number;//?
-    ADDRESS address;//const
-    unsigned short square;//?
-    unsigned short floor;//const
+    unsigned int number;//? //s1
+    ADDRESS address;//const //s2
+    unsigned short square;//? //s3
+    unsigned short floor;//const //s4
     SIDE side;//?
-    DATE date_sale;//const
-    unsigned int price;//change
+    DATE date_sale;//const //s5
+    unsigned int price;//change //s6
 
     SALE sale;//change
     unsigned int price_with_sale;
 
 public:
+    FLAT();
     FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale);
     ~FLAT();
 
@@ -30,11 +31,13 @@ public:
     void setSale(SALE sale);
 
     unsigned int getNumder();
-    string getAddress();
+    string getAddressStr();
+    ADDRESS getAddress();
     unsigned int getSquare();
     unsigned int getFloor();
     int getSide();
-    string getDataSale();
+    string getDataSaleStr();
+    DATE getDateSale();
     unsigned int getPrice();
     int getSale();
     unsigned int getPriceWithSale();

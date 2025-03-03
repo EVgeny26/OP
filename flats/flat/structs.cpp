@@ -1,6 +1,5 @@
 #include "structs.h"
 
-
 ostream& operator<<(ostream& os, const DATE date){
     os<<date.day<<'.'<<date.month<<'.'<<date.year;
     return os;
@@ -15,20 +14,37 @@ bool DATE::operator==(const DATE& other) const {
 }bool DATE::operator!=(const DATE& other) const {
     return !(*this == other);
 }
-DATE DATE::operator+(unsigned short days) const {
-    DATE result = *this;
 
-    result.day += days;
-
-    while (result.day > 31) {
-        result.day -= 31;
-        result.month++;
-        if (result.month > 12) {
-            result.month = 1;
-            result.year++;
-        }
+bool DATE::operator<(const DATE& other) const {
+    if (year < other.year) {
+        return 1;
+    } else if (year > other.year) {
+        return 0;
     }
-    return result;
+    if (month < other.month) {
+        return 1;
+    } else if (month > other.month) {
+        return 0;
+    }
+    return (day < other.day);
+}bool DATE::operator>=(const DATE& other) const {
+    return !operator<(other);
+}
+
+bool DATE::operator<=(const DATE& other) const {
+    if (year <= other.year) {
+        return 1;
+    } else if (year >= other.year) {
+        return 0;
+    }
+    if (month <= other.month) {
+        return 1;
+    } else if (month >= other.month) {
+        return 0;
+    }
+    return (day <= other.day);
+}bool DATE::operator>(const DATE& other) const {
+    return !operator<=(other);
 }
 
 
@@ -49,4 +65,26 @@ bool ADDRESS::operator==(const ADDRESS& other) const {
     && (num_street == other.num_street) && (num_flat == other.num_flat);
 }bool ADDRESS::operator!=(const ADDRESS& other) const {
     return !(*this == other);
+}
+
+bool ADDRESS::operator>(const ADDRESS& other) const {
+    if (region!=other.region)return region>other.region;
+    if (city!=other.city)return city>other.city;
+    if (street!=other.street)return street>other.street;
+    if (num_street!=other.num_street)return num_street>other.num_street;
+    if (num_flat!=other.num_flat)return num_flat>other.num_flat;
+    return 0;    
+}bool ADDRESS::operator<=(const ADDRESS& other) const {
+    return !operator>(other);
+}
+
+bool ADDRESS::operator>=(const ADDRESS& other) const {
+    if (region!=other.region)return region>=other.region;
+    if (city!=other.city)return city>=other.city;
+    if (street!=other.street)return street>=other.street;
+    if (num_street!=other.num_street)return num_street>=other.num_street;
+    if (num_flat!=other.num_flat)return num_flat>=other.num_flat;
+    return 0;    
+}bool ADDRESS::operator<(const ADDRESS& other) const {
+    return !operator>=(other);
 }

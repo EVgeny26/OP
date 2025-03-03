@@ -9,6 +9,9 @@ class LIST_FLAT{
     ELEM* head;
     unsigned int lenght;
 
+
+
+
 public:
     LIST_FLAT();
     ~LIST_FLAT();
@@ -18,21 +21,22 @@ public:
     //FLAT& getFlatNum(int pos);
     FLAT& operator[](int pos);
     void delFlatNum(int pos);
+    void sorted(unsigned short pole, bool revers);
 
     //реализовать
     //работа с файлами
-    void loudToFile();
-    void loudFromFile();
+    void loadFromFile();
+    void saveToFile();
 
 
     //запросы
     void getFlatsForData(DATE date); //you can DATE==DATE
-    void getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
+    void getFlatsForMonthAndSide(unsigned short month, unsigned short year);
     void getFlatsForFirstHalfYear(unsigned short year);
-    void getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
+    short getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
 
     void getFlatsWithSale();
     void getFlatsWithSaleOnFloor(unsigned short floor);
-    float getPersentSaleFromFlatForMonth(unsigned short month, unsigned short year);
+    short getPersentSaleFromFlatForMonth(unsigned short month, unsigned short year);
 
 };
