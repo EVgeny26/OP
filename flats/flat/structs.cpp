@@ -15,7 +15,21 @@ bool DATE::operator==(const DATE& other) const {
 }bool DATE::operator!=(const DATE& other) const {
     return !(*this == other);
 }
+DATE DATE::operator+(unsigned short days) const {
+    DATE result = *this;
 
+    result.day += days;
+
+    while (result.day > 31) {
+        result.day -= 31;
+        result.month++;
+        if (result.month > 12) {
+            result.month = 1;
+            result.year++;
+        }
+    }
+    return result;
+}
 
 
 

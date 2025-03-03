@@ -18,7 +18,7 @@ struct DATE
     string get_string();
     bool operator==(const DATE& other) const;
     bool operator!=(const DATE& other) const;
-    //DATE operator+(unsigned short days) const;
+    DATE operator+(unsigned short days) const;
 };
 ostream& operator<<(ostream& os, const DATE date);
 
