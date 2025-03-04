@@ -193,7 +193,6 @@ void LIST_FLAT::loadFromFile(){
         getline(iss, token, '|');
         sale = SALE(stoi(token));
         flat = FLAT(number, address, square, floor, side, date_sale, price, sale);
-        cout<<flat;
         addFlat(flat);
     }
     file.close();
