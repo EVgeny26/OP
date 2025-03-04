@@ -31,7 +31,7 @@ public:
 
     //запросы
     void getFlatsForData(DATE date); //you can DATE==DATE
-    void getFlatsForMonthAndSide(unsigned short month, unsigned short year);
+    void getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
     void getFlatsForFirstHalfYear(unsigned short year);
     short getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
 

@@ -208,11 +208,10 @@ void LIST_FLAT::getFlatsForData(DATE date){
     }
 }
 
-void LIST_FLAT::getFlatsForMonthAndSide(unsigned short month, unsigned short year){
+void LIST_FLAT::getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side){
     ELEM *current_flat=head;
     FLAT flat = current_flat->flat;
     DATE date = flat.getDateSale();
-    SIDE side = SIDE(YARD);
     for(int i = 0; i < lenght; i++){
         flat = current_flat->flat;
         date = flat.getDateSale();
@@ -225,12 +224,14 @@ void LIST_FLAT::getFlatsForFirstHalfYear(unsigned short year){
     ELEM *current_flat=head;
     FLAT flat = current_flat->flat;
     DATE date = flat.getDateSale();
+    int count = 0;
     for(int i = 0; i < lenght; i++){
         flat = current_flat->flat;
         date = flat.getDateSale();
-        if(date.month > 0 && date.month < 7 && date.year == year) cout << flat;
+        if(date.month > 0 && date.month < 7 && date.year == year) count++;
         current_flat=current_flat->next_el;
     }
+    cout << count;
 }
 
 short LIST_FLAT::getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign){

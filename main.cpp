@@ -23,8 +23,9 @@ int main(){
     SALE sale{};
     LIST_FLAT *flats = new LIST_FLAT{};
 
+    char znak = '=';
     int pos{}, rev{};
-    int sw = 0, num = 0;
+    int sw = 0, num = 0, zapros = 0, month = 0, year = 0;
     FLAT flat = FLAT();
     number = flats->getLenght();
     do{
@@ -72,7 +73,65 @@ int main(){
             flats->printAll();
             break;
         case 5:
-            
+            cout << "Выберите запрос:\n";
+            cout << "1. Вывести список квартир проданных _числа_месяца_года\n";
+            cout << "2. Вывести список квартир проданных _месяца_года и окна которых выходят на улицу(во двор)\n";
+            cout << "3. Вывести количество квартир, которые были проданы за первое полугодие _года\n";
+            cout << "4. Вывести процент от всех проданных квартир за _месяц_года, имели стоимость >,< или = _руб.\n";
+            cout << "5. Вывести список квартир, имевших скидку при продаже\n";
+            cout << "6. Вывести количество проданных квартир, которые расположены на_этаже и получившие скидку при продаже\n";
+            cout << "7. Вывести процент суммы скидки от общей суммы продаж _месяца\n:";
+            cin >> zapros;
+            switch (zapros)
+            {
+            case 1:
+                date_sale.setDate();
+                flats->getFlatsForData(date_sale);
+                break;
+            case 2:
+                cout << "Введите месяц: ";
+                cin >> month;
+                cout << "Введите год: ";
+                cin >> year;
+                cout << "Выберите куда выходят окна: \nВо двор - 0\nНа улицу - 1\n";
+                cin >> num;
+                side = SIDE(num);
+                flats->getFlatsForMonthAndSide(month, year, side);
+                break;
+            case 3:
+                cout << "Введите год: ";
+                cin >> year;
+                flats->getFlatsForFirstHalfYear(year);
+                break;
+            case 4:
+                cout << "Введите месяц: ";
+                cin >> month;
+                cout << "Введите год: ";
+                cin >> year;
+                cout << "Введите знак(>, <, =): ";
+                cin >> znak;
+                cout << "Введите стоимость: ";
+                cin >> price;
+                cout << flats->getFlatsForMonthAndPrice(month, year, price, znak);
+                break;
+            case 5:
+                flats->getFlatsWithSale();
+                break;
+            case 6:
+                cout << "Введите номер этажа: ";
+                cin >> floor;
+                flats->getFlatsWithSaleOnFloor(floor);
+                break;
+            case 7:
+                cout << "Введите месяц: ";
+                cin >> month;
+                cout << "Введите год: ";
+                cin >> year;
+                flats->getPersentSaleFromFlatForMonth(month, year);
+                break;
+            default:
+                break;
+            }
             break;
         case 6:
             flats->saveToFile();
