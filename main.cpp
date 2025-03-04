@@ -27,6 +27,7 @@ int main(){
     int sw = 0, num = 0;
     FLAT flat = FLAT();
     number = flats->getLenght();
+    flats->loadFromFile();
     do{
         cout << "МЕНЮ\n";
         cout << "1. Добавить\n2. Удалить\n3. Сортировать\n4. Распечатать данные\n5. Запросы\n6. Сохранить в файл\n7. Загрузить из файла\n0. Выход: ";
