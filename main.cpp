@@ -21,9 +21,51 @@ int main(){
     DATE date_sale{};
     unsigned int price{};
     SALE sale{};
-
     LIST_FLAT *flats = new LIST_FLAT{};
-    flats->loadFromFile();
+
+
+    int sw = 0, num = 0;
+    FLAT flat = FLAT();
+    number = flats->getLenght();
+    do{
+        cout << "МЕНЮ\n";
+        cout << "1. Добавить\n2. Удалить\n3. Сортировать\n4. Распечатать данные\n5. Запросы\n6. Сохранить в файл\n7. Загрузить из файла\n0. Выход: ";
+        cin >> sw;
+        switch (sw)
+        {
+        case 0:
+            break;
+        case 1:
+            number++;
+            address.setAddress();
+            cout << "Введите площадь: ";
+            cin >> square;
+            cout << "Введите этаж: ";
+            cin >> floor;
+            cout << "Выберите куда выходят окна: \nВо двор - 0\nНа улицу - 1\n";
+            cin >> num;
+            side = SIDE(num);
+            date_sale.setDate();
+            cout << "Введите цену: ";
+            cin >> price;
+            cout << "Введите сумму скидки:\nNOT - 0\nFOR_WORKERS - 30\n";
+            cin >> num;
+            sale = SALE(num);
+            flat = FLAT(number, address, square, floor, side, date_sale, price, sale);
+            flats->addFlat(flat);
+            break;
+        case 6:
+            flats->saveToFile();
+            break;
+        case 7:
+            flats->loadFromFile();
+            break;
+        default:
+            break;
+        }
+    }while(sw);
+
+    // flats->loadFromFile();
 
     // flats->addFlat(FLAT{number, address, square, floor, side, date_sale, price, sale});
     // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 9, sale});
@@ -31,10 +73,10 @@ int main(){
     // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 3, SALE(FOR_WORKERS)});
     // flats->addFlat(FLAT{++number, address, ++square, ++floor, side, date_sale, 8, sale});
 
-    cout<<flats->getLenght()<<" len prelast"<<endl;
+    // cout<<flats->getLenght()<<" len prelast"<<endl;
 
 
-    flats->printAll();
+    // flats->printAll();
 
     // cout<<endl;
     // for(int i=0;i<flats->getLenght(); i++) cout<<(*flats)[i];
@@ -55,21 +97,21 @@ int main(){
     
     // flats->saveToFile();
 
-    flats->printAll();
+    // flats->printAll();
 
 
 
-    FLAT temp = (*flats)[2];
-    (*flats)[2] = (*flats)[2 + 1];
-    (*flats)[2 + 1] = temp;
+    // FLAT temp = (*flats)[2];
+    // (*flats)[2] = (*flats)[2 + 1];
+    // (*flats)[2 + 1] = temp;
 
-    cout<<endl<<endl;
-    flats->printAll();
+    // cout<<endl<<endl;
+    // flats->printAll();
 
-    flats->sorted(6,1);
+    // flats->sorted(6,1);
 
-    cout<<endl<<endl;
-    flats->printAll();
+    // cout<<endl<<endl;
+    // flats->printAll();
     delete flats;
 
     return 0;

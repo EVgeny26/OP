@@ -23,9 +23,9 @@ struct DATE
     bool operator<=(const DATE& other) const;
     bool operator>=(const DATE& other) const;
     //DATE operator+(unsigned short days) const;
+    void setDate();
 };
 ostream& operator<<(ostream& os, const DATE date);
-
 
 struct ADDRESS
 {
@@ -42,12 +42,13 @@ struct ADDRESS
     bool operator>(const ADDRESS& other) const;
     bool operator<=(const ADDRESS& other) const;
     bool operator>=(const ADDRESS& other) const;
+    void setAddress();
 };
 ostream& operator<<(ostream& os, const ADDRESS address);
 
 
 enum SIDE{
-    YARD, STREET, 
+    YARD = 0, STREET = 1, 
     //FOREST, SEA, RIVER, LAKE, 
 };
 enum SALE{
