@@ -4,6 +4,17 @@ ostream& operator<<(ostream& os, const DATE date){
     os<<date.day<<'.'<<date.month<<'.'<<date.year;
     return os;
 }
+
+void DATE::setDate(){
+    cout << "Введите дату продажи:\n";
+    cout << "Введите день: ";
+    cin >> day;
+    cout << "Введите месяц: ";
+    cin >> month;
+    cout << "Введите год: ";
+    cin >> year;
+}
+
 string DATE::get_string(){
     string date{to_string(day)+'.'+to_string(month)+'.'+to_string(year)};
     return date;
@@ -74,6 +85,20 @@ bool ADDRESS::operator>(const ADDRESS& other) const {
     return 0;    
 }bool ADDRESS::operator<=(const ADDRESS& other) const {
     return !operator>(other);
+}
+
+void ADDRESS::setAddress(){
+    cout << "Введите адрес:\n";
+    cout << "Введите регион: ";
+    cin >> region;
+    cout << "Введите город: ";
+    cin >> city;
+    cout << "Введите улицу: ";
+    cin >> street;
+    cout << "Введите номер дома: ";
+    cin >> num_street;
+    cout << "Введите номер квартиры: ";
+    cin >> num_flat;
 }
 
 bool ADDRESS::operator>=(const ADDRESS& other) const {
