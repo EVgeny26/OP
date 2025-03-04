@@ -23,12 +23,12 @@ int main(){
     SALE sale{};
     LIST_FLAT *flats = new LIST_FLAT{};
 
-
+    int pos{}, rev{};
     int sw = 0, num = 0;
     FLAT flat = FLAT();
     number = flats->getLenght();
     do{
-        cout << "МЕНЮ\n";
+        cout << "\n\nМЕНЮ\n";
         cout << "1. Добавить\n2. Удалить\n3. Сортировать\n4. Распечатать данные\n5. Запросы\n6. Сохранить в файл\n7. Загрузить из файла\n0. Выход: ";
         cin >> sw;
         switch (sw)
@@ -53,6 +53,26 @@ int main(){
             sale = SALE(num);
             flat = FLAT(number, address, square, floor, side, date_sale, price, sale);
             flats->addFlat(flat);
+            break;
+        case 2:
+            cout << "\nВведите номер квартиры, которую требуется удалить: ";
+            cin>>pos;
+            flats->delFlatNum(pos);
+            break;
+        case 3:
+            cout << "\nВведите номер поля, по которому требуется отсортировать: \n";
+            cout << "1. Номер\n2. Адресс\n3. Площадь\n4. Этаж\n5. Дата продажи\n6. Цена\nВвод: ";
+            cin>>pos;
+            cout << "Требуется ли реверс: \n";
+            cout << "0. Нет\n1. Да\nВвод: ";
+            cin>>rev;
+            flats->sorted(pos,rev);
+            break;
+        case 4:
+            flats->printAll();
+            break;
+        case 5:
+            
             break;
         case 6:
             flats->saveToFile();
