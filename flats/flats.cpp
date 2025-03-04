@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <fstream>
 #include <sstream>
+#include <cstring>
 
 
 LIST_FLAT::LIST_FLAT(): head(nullptr), lenght(0) {}
@@ -130,12 +131,12 @@ ADDRESS parseAddress(const string& adr) {
     istringstream addressStream(adr);
     string token;
 
-    getline(addressStream, address.region, '-');
-    getline(addressStream, address.city, '-');
-    getline(addressStream, address.street, '-');
-    getline(addressStream, token, '-');
+    getline(addressStream, address.region, ' ');
+    getline(addressStream, address.city, ' ');
+    getline(addressStream, address.street, ' ');
+    getline(addressStream, token, ' ');
     address.num_street = stoi(token);
-    getline(addressStream, token, '-');
+    getline(addressStream, token, ' ');
     address.num_flat = stoi(token);
 
     return address;
@@ -192,6 +193,7 @@ void LIST_FLAT::loadFromFile(){
         getline(iss, token, '|');
         sale = SALE(stoi(token));
         flat = FLAT(number, address, square, floor, side, date_sale, price, sale);
+        cout<<flat;
         addFlat(flat);
     }
     file.close();
