@@ -65,7 +65,7 @@ ostream& operator<<(ostream& os, const ADDRESS address){
     return os;
 }
 string ADDRESS::get_string(){
-    string address{region+"-"+city+"-"+street+"-"+to_string(num_street)+"-"+to_string(num_flat)};
+    string address{region+" "+city+" "+street+" "+to_string(num_street)+" "+to_string(num_flat)};
     return address;
 }
 
