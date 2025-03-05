@@ -70,6 +70,7 @@ int main(){
             flats->sorted(pos,rev);
             break;
         case 4:
+            
             flats->printAll();
             break;
         case 5:

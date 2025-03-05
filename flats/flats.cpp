@@ -33,6 +33,7 @@ void LIST_FLAT::addFlat(FLAT newFlat){
 }
 
 void LIST_FLAT::printAll(){
+    cout<<"№    Адресс    площадь     Этаж   Сторона  Дата продажи     Цена   Скидка    Цена со скидкой"<<endl;
     ELEM *current_flat=head;
     while(current_flat!=nullptr){
         cout<<current_flat->flat;
