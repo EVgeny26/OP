@@ -44,5 +44,5 @@ public:
     friend ostream& operator<<(ostream& os, const FLAT& s);
     void printShortInfo();
 
-
+    string operator[](int pos);
 };

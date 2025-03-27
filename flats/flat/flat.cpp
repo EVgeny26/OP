@@ -66,3 +66,38 @@ ostream& operator<<(ostream& os, const FLAT& obj){
 void FLAT::printShortInfo(){
     cout<<number<<' '<<address.get_string()<<' '<<square<<endl;
 }
+
+string FLAT::operator[](int pos){
+    switch(pos){
+        case 0: 
+            return to_string(number);
+            break;
+        case 1: 
+            return address.get_string();
+            break;
+        case 2: 
+            return to_string(square);
+            break;
+        case 3: 
+            return to_string(floor);
+            break;
+        case 4: 
+            return to_string(side);
+            break;
+        case 5: 
+            return date_sale.get_string();
+            break;
+        case 6: 
+            return to_string(price);
+            break;
+        case 7: 
+            return to_string(sale);
+            break;
+        case 8: 
+            return to_string(price_with_sale);
+            break;
+        default:
+            throw out_of_range("Индекс за пределами диапазона");
+            break;
+    }
+}
