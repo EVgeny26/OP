@@ -1,16 +1,10 @@
+#ifndef LISTS_H
+#define LISTS_H
+
 #include "flat/flat.h"
 
 class LIST_FLAT{
-    struct ELEM
-    {
-        FLAT flat;
-        ELEM* next_el{};
-    };
-    ELEM* head;
-    unsigned int lenght;
-
-
-
+    Vector<FLAT> flats;
 
 public:
     LIST_FLAT();
@@ -30,13 +24,15 @@ public:
 
 
     //запросы
-    void getFlatsForData(DATE date); //you can DATE==DATE
-    void getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
-    void getFlatsForFirstHalfYear(unsigned short year);
+    Vector<FLAT> getFlatsForData(DATE date); //you can DATE==DATE
+    Vector<FLAT> getFlatsForMonthAndSide(unsigned short month, unsigned short year, SIDE side);
+    Vector<FLAT> getFlatsForFirstHalfYear(unsigned short year);
     short getFlatsForMonthAndPrice(unsigned short month, unsigned short year, unsigned int price, char sign);
 
-    void getFlatsWithSale();
-    void getFlatsWithSaleOnFloor(unsigned short floor);
+    Vector<FLAT> getFlatsWithSale();
+    Vector<FLAT> getFlatsWithSaleOnFloor(unsigned short floor);
     short getPersentSaleFromFlatForMonth(unsigned short month, unsigned short year);
 
 };
+
+#endif //LISTS_H
