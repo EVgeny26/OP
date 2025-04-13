@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
+#include <algorithm>
 
 
 LIST_FLAT::LIST_FLAT(): flats() {}
@@ -74,7 +75,7 @@ void LIST_FLAT::delFlatNum(int pos){
 void LIST_FLAT::saveToFile(string fileName){
     ofstream file(fileName, ios::out);
     if(!file){
-        cerr << "Ошибка! Файл не существует!\n";
+        cerr << "Error! File is not exist!\n";
         return;
     }
     for(auto flat : flats){
@@ -95,7 +96,9 @@ ADDRESS parseAddress(const string& adr) {
     address.num_street = stoi(token);
     getline(addressStream, token, ' ');
     address.num_flat = stoi(token);
-
+    replace(address.region.begin(), address.region.end(), '_', ' ');
+    replace(address.city.begin(), address.city.end(), '_', ' ');
+    replace(address.street.begin(), address.street.end(), '_', ' ');
     return address;
 }
 DATE parseDate(const string& dateStr) {
@@ -113,11 +116,11 @@ DATE parseDate(const string& dateStr) {
     return date;
 }
 
-void LIST_FLAT::loadFromFile(string fileName){
+bool LIST_FLAT::loadFromFile(string fileName){
     ifstream file(fileName, ios::in);
     if(!file){
-        cerr << "Ошибка! Файл не существует!\n";
-        return;
+        cerr << "Error! File is not exist!\n";
+        return false;
     }
     unsigned int number{};
     ADDRESS address{};
@@ -152,6 +155,7 @@ void LIST_FLAT::loadFromFile(string fileName){
         addFlat(flat);
     }
     file.close();
+    return true;
 }
 
 
