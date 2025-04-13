@@ -19,8 +19,8 @@ public:
 
     //реализовать
     //работа с файлами
-    void loadFromFile();
-    void saveToFile();
+    void loadFromFile(string fileName);
+    void saveToFile(string fileName);
 
 
     //запросы

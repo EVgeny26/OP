@@ -23,7 +23,7 @@ int main(){
     SALE sale{};
     LIST_FLAT *flats = new LIST_FLAT{};
 
-    flats->loadFromFile();
+    flats->loadFromFile("file.txt");
     flats->printAll();
 
     for(int i=0;i<9;i++){

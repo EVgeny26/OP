@@ -71,8 +71,7 @@ void LIST_FLAT::delFlatNum(int pos){
     flats.erase(flats.begin()+pos);
 }
 
-void LIST_FLAT::saveToFile(){
-    string fileName = "file.txt";
+void LIST_FLAT::saveToFile(string fileName){
     ofstream file(fileName, ios::out);
     if(!file){
         cerr << "Ошибка! Файл не существует!\n";
@@ -114,8 +113,7 @@ DATE parseDate(const string& dateStr) {
     return date;
 }
 
-void LIST_FLAT::loadFromFile(){
-    string fileName = "file.txt";
+void LIST_FLAT::loadFromFile(string fileName){
     ifstream file(fileName, ios::in);
     if(!file){
         cerr << "Ошибка! Файл не существует!\n";
