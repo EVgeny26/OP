@@ -25,6 +25,7 @@ protected:
 public:
     FLAT();
     FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale);
+    FLAT(unsigned int number, string region, string city, string street, unsigned short num_street, unsigned short num_flat, unsigned short square, unsigned short floor, int sideIndex, unsigned short year, unsigned short month, unsigned short day, unsigned int price, int sale);
     ~FLAT();
 
     void setPrice(unsigned int newPrice);

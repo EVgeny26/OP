@@ -6,6 +6,22 @@ FLAT::FLAT(){}
 FLAT::FLAT(unsigned int number, ADDRESS address, unsigned short square, unsigned short floor, SIDE side, DATE date_sale, unsigned int price, SALE sale):
     number(number), address(address), square(square), floor(floor), side(side), date_sale(date_sale), price(price), sale(sale), price_with_sale(price*(100-sale)/100) {}
 
+FLAT::FLAT(unsigned int number, string region, string city, string street, unsigned short num_street, unsigned short num_flat, unsigned short square, unsigned short floor, int sideIndex, unsigned short year, unsigned short month, unsigned short day, unsigned int price, int sale): number(number), square(square), floor(floor), side(SIDE(sideIndex)), sale(SALE(sale)), price(price), price_with_sale(price*(100-sale)/100){
+    ADDRESS address;
+    address.region = region;
+    address.city = city;
+    address.street = street;
+    address.num_street = num_street;
+    address.num_flat = num_flat;
+    this->address = address;
+
+    DATE date;
+    date.day = day;
+    date.month = month;
+    date.year = year;
+    this->date_sale = date;
+}
+
 FLAT::~FLAT(){}
 
 
