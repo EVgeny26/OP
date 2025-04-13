@@ -11,11 +11,11 @@ using namespace std;
 
 class FLAT{
 protected:
-    unsigned int number;//? //s1
+    unsigned int number;//const //s1
     ADDRESS address;//const //s2
-    unsigned short square;//? //s3
+    unsigned short square;//const //s3
     unsigned short floor;//const //s4
-    SIDE side;//?
+    SIDE side;//const
     DATE date_sale;//const //s5
     unsigned int price;//change //s6
 
