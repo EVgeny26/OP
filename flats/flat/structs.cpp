@@ -1,4 +1,5 @@
 #include "structs.h"
+#include <algorithm>
 
 ostream& operator<<(ostream& os, const DATE date){
     os<<date.day<<'.'<<date.month<<'.'<<date.year;
@@ -65,7 +66,13 @@ ostream& operator<<(ostream& os, const ADDRESS address){
     return os;
 }
 string ADDRESS::get_string(){
-    string address{region+" "+city+" "+street+" "+to_string(num_street)+" "+to_string(num_flat)};
+    string _region = region;
+    string _city = city;
+    string _street = street;
+    replace(_region.begin(), _region.end(), ' ', '_');
+    replace(_city.begin(), _city.end(), ' ', '_');
+    replace(_street.begin(), _street.end(), ' ', '_');
+    string address{_region+" "+_city+" "+_street+" "+to_string(num_street)+" "+to_string(num_flat)};
     return address;
 }
 
