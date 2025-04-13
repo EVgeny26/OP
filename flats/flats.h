@@ -19,7 +19,7 @@ public:
 
     //реализовать
     //работа с файлами
-    void loadFromFile(string fileName);
+    bool loadFromFile(string fileName);
     void saveToFile(string fileName);
 
 

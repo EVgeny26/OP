@@ -79,7 +79,9 @@ void LIST_FLAT::saveToFile(string fileName){
         return;
     }
     for(auto flat : flats){
-        file<<flat.getNumder()<<'|'<<flat.getAddress().get_string()<<'|'<<flat.getSquare()<<'|'<<flat.getFloor()<<'|'<<flat.getSide()<<'|'<<flat.getDateSaleStr()<<'|'<<flat.getPrice()<<'|'<<flat.getSale()<<'|'<<flat.getPriceWithSale()<<endl;
+        string address = flat.getAddress().get_string();
+        replace(address.begin(), address.end(), ' ', '_');
+        file<<flat.getNumder()<<'|'<<address<<'|'<<flat.getSquare()<<'|'<<flat.getFloor()<<'|'<<flat.getSide()<<'|'<<flat.getDateSaleStr()<<'|'<<flat.getPrice()<<'|'<<flat.getSale()<<'|'<<flat.getPriceWithSale()<<endl;
     }
     file.close();
 }
